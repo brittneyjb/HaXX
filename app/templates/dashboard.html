@@ -88,6 +88,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {% for t in Otasks %}
                     <tr>
                       <td>Task</td>
                       <td></td>
@@ -97,33 +98,7 @@
                             <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
                         <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                       </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
+                    {% endfor %}
                   </tbody>
                 </table>
               </div>
@@ -148,6 +123,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {% for t in tasks %}
                     <tr>
                       <td>Task</td>
                       <td></td>
@@ -157,33 +133,8 @@
                             <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
                         <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                       </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
+                    }
+                    {% endfor %}
                   </tbody>
                 </table>
               </div>

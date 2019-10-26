@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms import *
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, NumberRange
 from app.models import Users
 
 class LoginForm(FlaskForm):
@@ -26,8 +26,9 @@ class RegistrationForm(FlaskForm):
         user = Users.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
+
 class AddForm(FlaskForm):
     taskName = StringField('Task Title', validators=[DataRequired()])
     taskImportance = RadioField('Importance', choices=[('1','1'),('2','2'),('3','3'), ('4','4'), ('5','5')])
-    taskTime = StringField('Length of Task (hours)'), validators=[DataRequired(), NumberRange(0, 100)])
-    taskDueDate = DateField('Due Date (YYYY-MM-DD)'), validators=[DataRequired()])
+    taskTime = StringField('Length of Task (hours)', validators=[DataRequired(), NumberRange(0, 100)])
+    taskDueDate = DateField('Due Date (YYYY-MM-DD)', validators=[DataRequired()])
