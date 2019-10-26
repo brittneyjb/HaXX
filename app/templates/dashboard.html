@@ -18,6 +18,50 @@
   <!-- Custom styles for this template-->
   <link href="../static/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <style>
+  /* Dropdown Button */
+    .dropbtn {
+      background-color: rgba(76, 175, 80, 0);
+      color: white;
+      padding: 7px 10px;
+      font-size: 16px;
+      border: none;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 189px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 7px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: rgba(113, 146, 240, 0.3);}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: rgba(0, 0, 0, 0.10);}
+  </style>
+  
 </head>
 
 <body id="page-top">
@@ -35,19 +79,36 @@
         <nav class="navbar navbar-expand navbar-light bg-gradient-primary topbar mb-4 static-top shadow">
           
         <img class="img-profile rounded-circle" src="../static/img/profile.jpeg" width=50px>
-        <span class="mr-2 d-none d-lg-inline text-gray-100 large">&nbsp;&nbsp;&nbsp;Katie Carlson</span> 
           
-        <div class="topbar-divider d-none d-lg-block"></div>
+        <span class="mr-2 d-none d-lg-inline text-gray-100 large">&nbsp;</span>
           
-        <a class="nav-link" href="dashboard.html">
-          <span class="mr-2 d-lg-inline text-gray-100 large">Dashboard</span>
-        </a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Katie Carlson</span> 
+          </button>
+          <div class="dropdown-content">
+            <a href="index.html">Logout</a>
+          </div>
+          
+        </div>
+          
+        <div class="topbar-divider d-none d-md-block"></div>
+          
+          <a href="dashboard.html">
+          <div class="dropdown">
+          <button class="dropbtn">
+            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Dashboard</span> 
+          </button>
+          </div></a>
             
         <div class="topbar-divider d-none d-md-block"></div>
 
-        <a class="nav-link" href="leaderboard.html">
-          <span class="mr-2 d-lg-inline text-gray-100 large">Leaderboard</span>
-        </a>
+        <a href="leaderboard.html">
+          <div class="dropdown">
+          <button class="dropbtn">
+            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Leaderboard</span> 
+          </button>
+          </div></a>
           
           <ul class="navbar-nav ml-auto">
             <a href="newTask.html" class="btn btn-success btn-icon-split">
