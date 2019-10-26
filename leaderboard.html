@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Leaderboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -65,7 +65,73 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Leaderboard Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">Leaderboard</h1>
+
+          <div class="row">
+            
+            <div class="col-lg-6">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">My Productivity</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">My Productivity</h6>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="30%;" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th width = "10%;">Rank</th>
+                          <th>User</th>
+                          <th width = "10%;">Points</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>George P. Burdell</td>
+                          <td></td>
+                          </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Brianna</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Holly</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Brittney</td>
+                          <td></td>
+                        </tr>
+                          <tr>
+                          <td>4</td>
+                          <td>Katie</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -122,6 +188,14 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 
