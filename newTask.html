@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>SB Admin 2 - Buttons</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,6 +18,67 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <style>
+    .myForm {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.8em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    }
+    
+    .myForm * {
+    box-sizing: border-box;
+    }
+
+    .myForm fieldset {
+    border: none;
+    padding: 0;
+    }
+
+    .myForm legend,
+    .myForm label {
+    padding: 0;
+    font-weight: bold;
+    }
+
+    .myForm label.choice {
+    font-size: 0.9em;
+    font-weight: normal;
+    }
+
+    .myForm input[type="text"],
+    .myForm input[type="tel"],
+    .myForm input[type="email"],
+    .myForm input[type="datetime-local"],
+    .myForm select,
+    .myForm textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+    }
+
+    .myForm textarea {
+    height: 100px;
+    }
+
+    .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-top: 1em;
+    }
+
+    .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+    }
+    </style>
+  
 </head>
 
 <body id="page-top">
@@ -33,14 +94,14 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">First name</div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -51,19 +112,19 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Social
+        Interface
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Components</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item active" href="buttons.html">Buttons</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -164,13 +225,6 @@
               </div>
             </div>
           </form>
-          
-          <a href="newTask.html" class="btn btn-success btn-icon-split">
-            <span class="icon text-white-50">
-              <i class="fas fa-square"></i>
-            </span>
-            <span class="text">Create New Task</span>
-          </a>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -339,140 +393,94 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Hello, there.</h1>
-          <p class="mb-4">View today's tasks below.</p>
+          <h1 class="h3 mb-4 text-gray-800">New Task</h1>
 
-          <!--Overdue!-->
-            
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><font color="red">Overdue Tasks <span class="glyphicon glyphicon-exclamation-sign"></span></font></h6>
-              
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th width = "10%;">Due Date</th>
-                      <th width = "10%;">Priority</th>
-                        <th>Category</th>
-                        <th width = "10%;">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                        <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                      </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                  </tbody>
-                </table>
+          <div class="row">
+
+            <div class="col-lg-10">
+
+              <!-- Circle Buttons -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Description of Task</h6>
+                </div>
+                <div class="card-body">
+                  <p>Describe your task with a short title that will job your memory about what it is you should be doing. </p>
+                  
+                  <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+                  
+                  <label>Title</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
+
+                  <label>Category</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
+                  
+                  <label>Description of Task</label> 
+                  <div class="col-xs-10" >
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
+                    
+                  <label>Priority</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="dropoff_place" class="form-control" required list="destinations" placeholder="Scale: 1-5">
+                  </div>
+                  <datalist id="destinations">
+                  <option value="1: Very Low">
+                  <option value="2: Low">
+                  <option value="3: Medium">
+                  <option value="4: High">
+                  <option value="5: Very High">
+                  </datalist>
+                  <p></p>
+                  
+                  <label>Due Date</label>
+                  <div class="col-xs-10">
+                    <input type="datetime-local" name="pickup_time" class="form-control" required>
+                  </div>
+                  <p></p>
+
+                <p><button>Submit Booking</button></p>
+
+                </form>
+
+                  
+                  
+                </div>
               </div>
+
             </div>
-            </div>
-              
-              <!--MY TASKS-->
-            <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">My Tasks</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="">
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th width = "10%;">Due Date</th>
-                      <th width = "10%;">Priority</th>
-                        <th>Category</th>
-                        <th width = "10%;">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                      </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                                                <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-        </div>
-              
-              
+
           </div>
-        </div>
 
         </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
@@ -507,13 +515,6 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
