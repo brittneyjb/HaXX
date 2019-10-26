@@ -18,6 +18,67 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <style>
+    .myForm {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.8em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    }
+    
+    .myForm * {
+    box-sizing: border-box;
+    }
+
+    .myForm fieldset {
+    border: none;
+    padding: 0;
+    }
+
+    .myForm legend,
+    .myForm label {
+    padding: 0;
+    font-weight: bold;
+    }
+
+    .myForm label.choice {
+    font-size: 0.9em;
+    font-weight: normal;
+    }
+
+    .myForm input[type="text"],
+    .myForm input[type="tel"],
+    .myForm input[type="email"],
+    .myForm input[type="datetime-local"],
+    .myForm select,
+    .myForm textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+    }
+
+    .myForm textarea {
+    height: 100px;
+    }
+
+    .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-top: 1em;
+    }
+
+    .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+    }
+    </style>
+  
 </head>
 
 <body id="page-top">
@@ -344,27 +405,54 @@
                   <h6 class="m-0 font-weight-bold text-primary">Description of Task</h6>
                 </div>
                 <div class="card-body">
-                  <p>Use Font Awesome Icons (included with this theme package) along with the circle buttons as shown in the examples below!</p>
-                </div>
-              </div>
+                  <p>Describe your task with a short title that will job your memory about what it is you should be doing. </p>
+                  
+                  <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
 
-              <!-- Brand Buttons -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Time Commitment</h6>
-                </div>
-                <div class="card-body">
-                  <p>Google and Facebook buttons are available featuring each company's respective brand color. They are used on the user login and registration pages.</p>
+                  
+                  <label>Title</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
 
-                </div>
-              </div>
-              
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Priority</h6>
-                </div>
-                <div class="card-body">
-                  <p>Works with any button colors, just use the class and the markup in the examples below. The examples below also use the helper class on the icons for additional styling, but it is not required.</p>
+                  <label>Category</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
+                  
+                  <label>Description of Task</label> 
+                  <div class="col-xs-10" >
+                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                  </div>
+                  <p></p>
+                    
+                  <label>Priority</label> 
+                  <div class="col-xs-10">
+                    <input type="text" name="dropoff_place" class="form-control" required list="destinations" placeholder="Scale: 1-5">
+                  </div>
+                  <datalist id="destinations">
+                  <option value="1: Very Low">
+                  <option value="2: Low">
+                  <option value="3: Medium">
+                  <option value="4: High">
+                  <option value="5: Very High">
+                  </datalist>
+                  <p></p>
+                  
+                  <label>Due Date</label>
+                  <div class="col-xs-10">
+                    <input type="datetime-local" name="pickup_time" class="form-control" required>
+                  </div>
+                  <p></p>
+
+                <p><button>Submit Booking</button></p>
+
+                </form>
+
+                  
+                  
                 </div>
               </div>
 

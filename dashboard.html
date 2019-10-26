@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -342,10 +342,12 @@
           <h1 class="h3 mb-2 text-gray-800">Hello, there.</h1>
           <p class="mb-4">View today's tasks below.</p>
 
-          <!-- DataTales Example -->
+          <!--Overdue!-->
+            
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">My Tasks</h6>
+                <h6 class="m-0 font-weight-bold text-primary"><font color="red">Overdue Tasks <span class="glyphicon glyphicon-exclamation-sign"></span></font></h6>
+              
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -353,8 +355,10 @@
                   <thead>
                     <tr>
                       <th>Task</th>
-                      <th>Due Date</th>
-                      <th>Priority</th>
+                      <th width = "10%;">Due Date</th>
+                      <th width = "10%;">Priority</th>
+                        <th>Category</th>
+                        <th width = "10%;">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -362,27 +366,107 @@
                       <td>Task</td>
                       <td></td>
                       <td></td>
+                        <td></td>
+                        <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                      </tr>
+                    <tr>
+                      <td>Task</td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                     </tr>
                     <tr>
                       <td>Task</td>
                       <td></td>
                       <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                     </tr>
                     <tr>
                       <td>Task</td>
                       <td></td>
                       <td></td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+            </div>
+              
+              <!--MY TASKS-->
+            <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">My Tasks</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="">
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th width = "10%;">Due Date</th>
+                      <th width = "10%;">Priority</th>
+                        <th>Category</th>
+                        <th width = "10%;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Task</td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                      </tr>
+                    <tr>
+                      <td>Task</td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                    </tr>
+                    <tr>
+                      <td>Task</td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                    </tr>
+                    <tr>
+                      <td>Task</td>
+                      <td></td>
+                      <td></td>
+                        <td></td>
+                                                <td>        
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+              
+              
           </div>
+        </div>
 
         </div>
         <!-- /.container-fluid -->
