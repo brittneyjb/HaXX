@@ -51,3 +51,14 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+@app.route('/newTask')
+def newTask():
+    form = AddForm()
+    if form.validate_on_submit():
+        task = Tasks(task = form.taskName.data, rating = form.taskImportance.data, dueDate = form.taskDueDate.data, taskTime = form.taskTime.data)
+        task.set_priority()
+        db.session.add(task)
+        db.session.commit()
+        flash('Task Added')
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
