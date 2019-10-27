@@ -65,3 +65,24 @@ def newTask():
         flash('Task Added')
         return redirect(url_for('index'))
     return render_template('newTask.html', form=form)
+
+@app.route('/delTask/<t>', methods=['GET'])
+def delTask(t):
+    db.session.query(Tasks).filter(Tasks.task == t[0][0]).delete(synchronize_session='fetch')
+    for i in range(priorities.qsize()):
+        thing = priorities.get()
+        if thing[1][0]==t:
+            break
+        priorities.put(thing)
+    return redirect(url_for('index'))
+
+
+@app.route('/complete/<t>', methods=['GET'])
+def complete(t):
+    db.session.query(Tasks).filter(Tasks.task == t[0][0]).delete(synchronize_session='fetch')
+    for i in range(priorities.qsize()):
+        thing = priorities.get()
+        if thing[1][0]==t:
+            break
+        priorities.put(thing)
+    return redirect(url_for('index'))

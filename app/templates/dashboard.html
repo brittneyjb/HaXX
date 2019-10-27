@@ -156,8 +156,9 @@
                       <td>{{ -1 * temp.0 }}</td>
                         <td></td>
                                                 <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
+                            <a href="{{ url_for('complete',t=temp.1.0) }}"><span class="glyphicon glyphicon-pencil"></span> Complete   </a>
+                            
+                        <a href="{{ url_for('delTask', t=temp.1.0) }}"><span class="glyphicon glyphicon-remove"></span> Remove </a></td>
                       </tr>
                     
                     {% endfor %}
