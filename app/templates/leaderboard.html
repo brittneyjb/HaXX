@@ -84,17 +84,17 @@
           
         <div class="dropdown">
           <button class="dropbtn">
-            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Katie Carlson</span> 
+            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;{{ current_user.id }}</span> 
           </button>
           <div class="dropdown-content">
-            <a href="index.html">Logout</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
           </div>
           
         </div>
           
         <div class="topbar-divider d-none d-md-block"></div>
           
-          <a href="dashboard.html">
+          <a href="{{ url_for('index') }}">
           <div class="dropdown">
           <button class="dropbtn">
             <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Dashboard</span> 
@@ -103,7 +103,7 @@
             
         <div class="topbar-divider d-none d-md-block"></div>
 
-        <a href="leaderboard.html">
+        <a href="{{ url_for('leaderboard') }}">
           <div class="dropdown">
           <button class="dropbtn">
             <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Leaderboard</span> 
@@ -111,7 +111,7 @@
           </div></a>
           
           <ul class="navbar-nav ml-auto">
-            <a href="newTask.html" class="btn btn-success btn-icon-split">
+            <a href="{{ url_for('newTask') }}" class="btn btn-success btn-icon-split">
               <span class="icon text-white-50">
                 <img class="rounded-circle img-profile" src="../static/img/plus.png" width=23px>
               </span>

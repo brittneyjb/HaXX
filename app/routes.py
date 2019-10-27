@@ -86,3 +86,7 @@ def complete(t):
             break
         priorities.put(thing)
     return redirect(url_for('index'))
+
+@app.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html')
