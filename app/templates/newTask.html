@@ -143,7 +143,7 @@
           
         <div class="dropdown">
           <button class="dropbtn">
-            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Katie Carlson</span> 
+            <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;{{ current_user.id }}</span> 
           </button>
           <div class="dropdown-content">
             <a href="index.html">Logout</a>
@@ -153,7 +153,7 @@
           
         <div class="topbar-divider d-none d-md-block"></div>
           
-          <a href="dashboard.html">
+          <a href="{{ url_for('index') }}">
           <div class="dropdown">
           <button class="dropbtn">
             <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Dashboard</span> 
@@ -170,7 +170,7 @@
           </div></a>
           
           <ul class="navbar-nav ml-auto">
-            <a href="newTask.html" class="btn btn-success btn-icon-split">
+            <a href="{{ url_for('newTask') }}" class="btn btn-success btn-icon-split">
               <span class="icon text-white-50">
                 <img class="rounded-circle img-profile" src="../static/img/plus.png" width=23px>
               </span>
@@ -197,47 +197,53 @@
                 </div>
                 <div class="card-body">
                   
-                  <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+                  <form class="myForm" enctype="application/x-www-form-urlencoded" action="{{ url_for('newTask') }}" method="post" novalidate>
+                  {{ form.hidden_tag() }}
 
                   
-                  <label>Title</label> 
+                  <label>Task Name</label> 
                   <div class="col-xs-10">
-                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                    {{ form.taskName(size=32) }}
+                    {% for error in form.taskName.errors %}
+                          <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
                   </div>
                   <p></p>
 
-                  <label>Category</label> 
+                  <label>Importance</label> 
                   <div class="col-xs-10">
-                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                    {% for subfield in form.taskImportance %}
+                      <tr>
+                        <td>{{ subfield }}</td>
+                        <td>{{ subfield.label(size=32) }}</td>
+                      </tr>
+                    {% endfor %}
                   </div>
                   <p></p>
                   
-                  <label>Description of Task</label> 
+                  <label>Estimated Length of Task</label> 
+                  <p>Time in hours. Decimals allowed.</p>
                   <div class="col-xs-10" >
-                    <input type="text" name="customer_name" class="form-control" required placeholder="">
+                    {{ form.taskTime(size=32) }}
+                    {% for error in form.taskTime.errors %}
+                          <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
                   </div>
                   <p></p>
                     
-                  <label>Priority</label> 
+                  <label>Due Date</label> 
+                  <p>YYYY-MM-DD</p>
                   <div class="col-xs-10">
-                    <input type="text" name="dropoff_place" class="form-control" required list="destinations" placeholder="Scale: 1-5">
+                    {{ form.taskDueDate(size=32) }}
+                    {% for error in form.taskDueDate.errors %}
+                          <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
                   </div>
-                  <datalist id="destinations">
-                  <option value="1: Very Low">
-                  <option value="2: Low">
-                  <option value="3: Medium">
-                  <option value="4: High">
-                  <option value="5: Very High">
-                  </datalist>
+                  
                   <p></p>
                   
-                  <label>Due Date</label>
-                  <div class="col-xs-10">
-                    <input type="datetime-local" name="pickup_time" class="form-control" required>
-                  </div>
-                  <p></p>
 
-                <p><button href="dashboard.html">Submit Booking</button></p>
+                <p>{{ form.submit() }}</p>
 
                 </form>
 

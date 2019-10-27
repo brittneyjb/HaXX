@@ -30,5 +30,6 @@ class RegistrationForm(FlaskForm):
 class AddForm(FlaskForm):
     taskName = StringField('Task Title', validators=[DataRequired()])
     taskImportance = RadioField('Importance', choices=[('1','1'),('2','2'),('3','3'), ('4','4'), ('5','5')])
-    taskTime = StringField('Length of Task (hours)', validators=[DataRequired(), NumberRange(0, 100)])
+    taskTime = DecimalField('Length of Task (hours)', validators=[DataRequired(), NumberRange(min=0, max=100, message=None)])
     taskDueDate = DateField('Due Date (YYYY-MM-DD)', validators=[DataRequired()])
+    submit = SubmitField('Create')

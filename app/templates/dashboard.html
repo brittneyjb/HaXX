@@ -94,7 +94,7 @@
           
         <div class="topbar-divider d-none d-md-block"></div>
           
-          <a href="dashboard.html">
+          <a href="{{ url_for('index') }}">
           <div class="dropdown">
           <button class="dropbtn">
             <span class="mr-2 d-lg-inline text-gray-100 large">&nbsp;Dashboard</span> 
@@ -111,7 +111,7 @@
           </div></a>
           
           <ul class="navbar-nav ml-auto">
-            <a href="newTask.html" class="btn btn-success btn-icon-split">
+            <a href="{{ url_for('newTask') }}" class="btn btn-success btn-icon-split">
               <span class="icon text-white-50">
                 <img class="rounded-circle img-profile" src="../static/img/plus.png" width=23px>
               </span>
@@ -129,42 +129,6 @@
           <h1 class="h3 mb-2 text-gray-800">It's time to get things done.</h1>
           <p class="mb-4">View your tasks below.</p>
 
-          <!--Overdue!-->
-            
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"><font color="red">Overdue Tasks <span class="glyphicon glyphicon-exclamation-sign"></span></font></h6>
-              
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th width = "10%;">Due Date</th>
-                      <th width = "10%;">Priority</th>
-                        <th>Category</th>
-                        <th width = "15%;">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for t in Otasks %}
-                    <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
-                        <td></td>
-                        <td>        
-                            <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
-                        <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
-                      </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            </div>
               
               <!--MY TASKS-->
             <div class="card shadow mb-4">
@@ -184,17 +148,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for t in tasks %}
+                    {% for x in range(tasks.qsize()) %}
+                    {% set temp = tasks.get() %}
                     <tr>
-                      <td>Task</td>
-                      <td></td>
-                      <td></td>
+                      <td>{{ temp.1.0 }}</td>
+                      <td>{{ temp.1.1 }}</td>
+                      <td>{{ -1 * temp.0 }}</td>
                         <td></td>
                                                 <td>        
                             <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit / </a>
                         <a href="#"><span class="glyphicon glyphicon-remove"></span>Remove </a></td>
                       </tr>
-                    }
+                    
                     {% endfor %}
                   </tbody>
                 </table>

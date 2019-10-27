@@ -22,12 +22,15 @@ class Users(UserMixin, db.Model):
     def load_user(id):
         return Users.query.get(id)
 class Tasks(db.Model):
+    id = db.Column(db.String())
     rating = db.Column(db.Integer())
-    task = db.Column(db.String(120))
+    task = db.Column(db.String(120), primary_key=True)
     taskTime = db.Column(db.Float())
-    dueDate = db.Column(db.datetime())
-    priority = db.Column(db.float())
-    def set_priority():
-        self.priority = .4 * rating + .5 * form.taskDueDate.day - datetime.datetime.today().day + .1 * form.taskTime
+    dueDate = db.Column(db.Date())
+    priority = db.Column(db.Float())
+    def set_priority(self):
+        self.priority = round(.4 * float(self.rating) + .5 * 1/float(self.dueDate.day - datetime.datetime.today().day) + .1 * float(self.taskTime), 4)
+    def get_priority(self):
+        return self.priority
     def rank_priority(self, other):
         return this.priority > other.priority

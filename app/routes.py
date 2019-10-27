@@ -4,14 +4,19 @@ from flask import render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 import flask
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import Users
-from app.forms import LoginForm, RegistrationForm
+from app.models import Users, Tasks
+from app.forms import LoginForm, RegistrationForm, AddForm
+from queue import PriorityQueue
+from sqlalchemy import *
+priorities = PriorityQueue()
 
 @app.route('/')
 @app.route('/index', methods=['GET','POST'])
 @login_required
 def index():
-    return render_template('dashboard.html', title='Home', Otasks=[],tasks=[])
+    temp = PriorityQueue()
+    for i in priorities.queue: temp.put(i)
+    return render_template('dashboard.html', title='Home', Otasks=[],tasks=temp)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -27,10 +32,6 @@ def login():
         login_user(user, remember=form.remember_me.data)
 
         return redirect(url_for('index'))
-        #next_page = request.args.get('next')
-        #if not next_page or url_parse(next_page).netloc != '':
-        #    next_page = url_for('index')
-        #return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/logout')
@@ -51,14 +52,16 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
-@app.route('/newTask')
+
+@app.route('/newTask', methods=['GET', 'POST'])
 def newTask():
     form = AddForm()
     if form.validate_on_submit():
-        task = Tasks(task = form.taskName.data, rating = form.taskImportance.data, dueDate = form.taskDueDate.data, taskTime = form.taskTime.data)
+        task = Tasks(task = form.taskName.data, rating = form.taskImportance.data, dueDate = form.taskDueDate.data, taskTime = form.taskTime.data, id=current_user.id)
         task.set_priority()
+        priorities.put((0 - task.get_priority(), (form.taskName.data, form.taskDueDate.data)))
         db.session.add(task)
         db.session.commit()
         flash('Task Added')
         return redirect(url_for('index'))
-    return redirect(url_for('index'))
+    return render_template('newTask.html', form=form)
